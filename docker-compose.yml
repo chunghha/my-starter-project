@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  vaadin:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+     - "8080:8080"
+    networks:
+     - docker-vaadin-net
+
+networks:
+  docker-vaadin-net:
+    driver: bridge
