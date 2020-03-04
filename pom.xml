@@ -14,7 +14,7 @@
         <failOnMissingWebXml>false</failOnMissingWebXml>
 
         <!-- Dependencies -->
-        <vaadin.version>14.1.3</vaadin.version>
+        <vaadin.version>14.1.18</vaadin.version>
 
         <drivers.dir>${project.basedir}/drivers</drivers.dir>
         <drivers.downloader.phase>pre-integration-test</drivers.downloader.phase>
@@ -124,7 +124,7 @@
             <plugin>
                 <groupId>org.apache.tomee.maven</groupId>
                 <artifactId>tomee-maven-plugin</artifactId>
-                <version>8.0.0</version>
+                <version>8.0.1</version>
                 <configuration>
                     <tomeeClassifier>webprofile</tomeeClassifier>
                     <context>ROOT</context>

@@ -1,7 +1,7 @@
 FROM maven:3.6-jdk-11 as builder
 
 ENV NVM_VERSION v0.35.2
-ENV NODE_VERSION v12.14.0
+ENV NODE_VERSION v12.16.1
 ENV PROJECT_NAME my-starter-project
 
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
@@ -23,11 +23,11 @@ COPY frontend/ ./frontend/
 COPY src/ ./src/
 
 RUN mvn clean
-RUN mvn com.github.eirslett:frontend-maven-plugin:1.7.6:install-node-and-npm -DnodeVersion=$NODE_VERSION 
+RUN mvn com.github.eirslett:frontend-maven-plugin:1.9.1:install-node-and-npm -DnodeVersion=$NODE_VERSION 
 RUN mvn package -Pproduction
 
 
-FROM tomee:11-jre-8.0.0-M3-webprofile
+FROM tomee:11-jre-8.0.1-webprofile
 
 ENV PROJECT_NAME my-starter-project
 
